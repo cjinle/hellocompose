@@ -2,6 +2,7 @@ package ui
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.material.Text
+import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.sp
@@ -9,12 +10,9 @@ import androidx.compose.ui.unit.sp
 @Composable
 fun Header() {
     Column {
-        Text(text="header", fontSize = 40.sp)
-        SubHeader()
-    }
-}
+        TopAppBar {
 
-@Composable
-fun SubHeader() {
-    Text("sub header")
+        }
+
+    }
 }

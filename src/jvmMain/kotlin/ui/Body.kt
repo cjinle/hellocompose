@@ -2,12 +2,12 @@ package ui
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.sharp.Add
 import androidx.compose.material.icons.outlined.ArrowBack
+import androidx.compose.material.icons.outlined.Favorite
 import androidx.compose.material.icons.sharp.Close
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
@@ -42,11 +42,24 @@ fun Body() {
             Card {
                 Icon(Icons.Outlined.ArrowBack, "arrow back")
             }
+
+            Icon(Icons.Outlined.Favorite, "favorite")
         }
 
         Row {
             Tag("hello")
         }
+
+        Row {
+            val checkedState = remember { mutableStateOf(true) }
+            Checkbox(
+                checked = checkedState.value,
+                onCheckedChange = { checkedState.value = it }
+            )
+
+        }
+
+
     }
 }
 

@@ -17,16 +17,10 @@ import ui.Footer
 fun App() {
     MaterialTheme {
 
-        val modifier = Modifier.padding(top = 10.dp, bottom = 10.dp)
-
         Column {
             Header()
 
-            Divider(modifier = modifier)
-
             Body()
-
-            Divider(color = Color.Gray, modifier = modifier)
 
             Footer()
         }

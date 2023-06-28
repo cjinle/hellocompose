@@ -1,16 +1,34 @@
 package ui
 
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
-import androidx.compose.material.Text
+import androidx.compose.foundation.layout.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.unit.dp
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.material.*
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Favorite
+import androidx.compose.material.icons.filled.Menu
+import androidx.compose.runtime.CompositionLocalProvider
+
+
 
 @Composable
 fun Footer() {
-    Text("footer", textAlign = TextAlign.Center, modifier = Modifier.fillMaxWidth())
+    Column {
+        BottomAppBar {
+            CompositionLocalProvider(LocalContentAlpha provides ContentAlpha.high) {
+                IconButton(onClick = { println("menu click") }) {
+                    Icon(Icons.Filled.Menu, contentDescription = "Localized description")
+                }
+            }
+            Spacer(Modifier.weight(1f, true))
+            IconButton(onClick = { println("icon button click") }) {
+                Icon(Icons.Filled.Favorite, contentDescription = "Localized description")
+            }
+            IconButton(onClick = { println("icon button2 click") }) {
+                Icon(Icons.Filled.Favorite, contentDescription = "Localized description")
+            }
+        }
+
+    }
 }
